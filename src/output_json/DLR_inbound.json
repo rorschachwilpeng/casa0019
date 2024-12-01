@@ -1,0 +1,23 @@
+[
+    {
+        "lineName": "DLR",
+        "expectedArrival": "2024-12-01T20:06:45Z",
+        "platformName": "Platform 16",
+        "direction": "inbound",
+        "overall_service_level": 0.56
+    },
+    {
+        "lineName": "DLR",
+        "expectedArrival": "2024-12-01T20:16:45Z",
+        "platformName": "Platform 16",
+        "direction": "inbound",
+        "overall_service_level": 0.56
+    },
+    {
+        "lineName": "DLR",
+        "expectedArrival": "2024-12-01T20:26:45Z",
+        "platformName": "Platform 16",
+        "direction": "inbound",
+        "overall_service_level": 0.56
+    }
+]

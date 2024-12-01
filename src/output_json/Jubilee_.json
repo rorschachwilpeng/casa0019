@@ -1,0 +1,170 @@
+[
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:02:13Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:02:42Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:02:12Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:12:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:13:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:12:43Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:21:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:20:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:20:42Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:07:43Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:08:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:07:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:25:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:25:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:25:42Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:14:43Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:14:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:14:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:00:42Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:00:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:00:13Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:11:42Z",
+        "platformName": "Westbound - Platform 13",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:11:43Z",
+        "platformName": "Westbound - Platform 14",
+        "direction": "",
+        "overall_service_level": 0.37
+    },
+    {
+        "lineName": "Jubilee",
+        "expectedArrival": "2024-12-01T20:11:43Z",
+        "platformName": "Westbound - Platform 15",
+        "direction": "",
+        "overall_service_level": 0.37
+    }
+]

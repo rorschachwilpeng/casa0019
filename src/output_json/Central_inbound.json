@@ -1,0 +1,37 @@
+[
+    {
+        "lineName": "Central",
+        "expectedArrival": "2024-12-01T19:59:42Z",
+        "platformName": "Westbound - Platform 3",
+        "direction": "inbound",
+        "overall_service_level": 0.24
+    },
+    {
+        "lineName": "Central",
+        "expectedArrival": "2024-12-01T20:10:12Z",
+        "platformName": "Westbound - Platform 3",
+        "direction": "inbound",
+        "overall_service_level": 0.24
+    },
+    {
+        "lineName": "Central",
+        "expectedArrival": "2024-12-01T20:21:12Z",
+        "platformName": "Westbound - Platform 3",
+        "direction": "inbound",
+        "overall_service_level": 0.24
+    },
+    {
+        "lineName": "Central",
+        "expectedArrival": "2024-12-01T20:16:12Z",
+        "platformName": "Westbound - Platform 3",
+        "direction": "inbound",
+        "overall_service_level": 0.24
+    },
+    {
+        "lineName": "Central",
+        "expectedArrival": "2024-12-01T20:02:42Z",
+        "platformName": "Westbound - Platform 3",
+        "direction": "inbound",
+        "overall_service_level": 0.24
+    }
+]
