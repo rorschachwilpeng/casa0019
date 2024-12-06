@@ -1,0 +1,17 @@
+{
+    "central_inbound_expectedArrival": "2024-12-06T21:15:06Z",
+    "central_inbound_timeToStation": 1274,
+    "central_inbound_direction": "inbound",
+    "dlr_inbound_expectedArrival": "2024-12-06T20:56:40Z",
+    "dlr_inbound_timeToStation": 168,
+    "dlr_inbound_direction": "inbound",
+    "dlr_outbound_expectedArrival": "2024-12-06T20:56:02Z",
+    "dlr_outbound_timeToStation": 154,
+    "dlr_outbound_direction": "outbound",
+    "elizabeth_inbound_expectedArrival": "2024-12-06T21:01:05Z",
+    "elizabeth_inbound_timeToStation": 450,
+    "elizabeth_inbound_direction": "inbound",
+    "jubilee_inbound_expectedArrival": "2024-12-06T21:18:07Z",
+    "jubilee_inbound_timeToStation": 1491,
+    "jubilee_inbound_direction": "inbound"
+}
