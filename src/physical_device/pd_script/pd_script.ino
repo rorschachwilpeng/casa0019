@@ -5,42 +5,51 @@
 #include "arduino_secrets.h" 
 #include <Ticker.h>
 
+// Ticker instances for non-blocking tasks
 Ticker buttonTicker;
 Ticker knobTicker;
-// USER SET VARIABLE FOR EACH DEPLOYMENT START
-// Each device should connect to the feed that belongs to it
-// e.g. light/1/ or light/2/ etc.
+
+// USER SET VARIABLES FOR EACH DEPLOYMENT START
+// Each device should connect to its corresponding feed
+// e.g., light/1/ or light/2/ etc.
 const char* mqtt_topic = "student/ucfnyyp/linesinfo/";
 const char* mqtt_topic_all = "student/CASA0014/light/2/all/";
-// USER SET VARIABLE FOR EACH DEPLOYMENT END
+// USER SET VARIABLES FOR EACH DEPLOYMENT END
 
-// 按钮和旋钮的引脚
-#define ROTARY_ANGLE_SENSOR A0  // ESP8266上的唯一模拟引脚
-#define BUTTON_ANGLE_SENSOR 4   // GPIO4（D2引脚）
+// Pins for button and rotary angle sensor
+#define ROTARY_ANGLE_SENSOR A0  // The only analog pin on ESP8266
+#define BUTTON_ANGLE_SENSOR 4   // GPIO4 (D2 pin)
 
-#define ADC_REF 3.3       // ESP8266的ADC参考电压为3.3V
-#define FULL_ANGLE 300    // 旋钮的最大角度
-#define GROVE_VCC 3.3     // ESP8266的工作电压
-#define NUM_LINES 4  // 地铁线路数量
+// Voltage and angle configuration for rotary sensor
+#define ADC_REF 3.3       // ESP8266 ADC reference voltage is 3.3V
+#define FULL_ANGLE 300    // Maximum angle of the rotary sensor
+#define GROVE_VCC 3.3     // Working voltage of the Grove interface is 3.3V
 
-int inboundTimes[NUM_LINES];  // inbound方向数据
-int outboundTimes[NUM_LINES]; // outbound方向数据
+// Number of metro lines
+#define NUM_LINES 4  
 
-//String lineNames[4] = {"Central", "DLR", "Elizabeth", "Jubilee"};
+// Arrays to store westbound and eastbound times
+int westBoundTimes[NUM_LINES];
+int eastBoundTimes[NUM_LINES];
+
+// Array to map line names
 const char* lineNames[NUM_LINES] = {"Central", "DLR", "Elizabeth", "Jubilee"};
-int selectedLineNum = 0; // 当前所选线路索引
-bool isEastbound = true; // true = inbound, false = outbound
+
+// Variables to track selected line and direction
+int selectedLineNum = 0; // Current selected line index
+bool isEastbound = true; // true = eastbound, false = westbound
 
 /*
-**** please enter your sensitive data in the Secret tab/arduino_secrets.h
-**** using format below
+**** Enter sensitive data in the Secret tab/arduino_secrets.h
+**** using the following format:
 
 #define SECRET_SSID "ssid name"
 #define SECRET_PASS "ssid password"
 #define SECRET_MQTTUSER "user name - eg student"
 #define SECRET_MQTTPASS "password";
- */
+*/
 
+// WiFi and MQTT credentials
 const char* ssid          = SECRET_SSID;
 const char* password      = SECRET_PASS;
 const char* mqtt_username = SECRET_MQTTUSER;
@@ -48,42 +57,42 @@ const char* mqtt_password = SECRET_MQTTPASS;
 const char* mqtt_server = "mqtt.cetools.org";
 const int mqtt_port = 1884;
 
-
 WiFiClient espClient;
 PubSubClient client(espClient);
-
 
 void setup() {
   Serial.begin(115200);
   delay(10);
 
-  // 初始化旋钮和按钮 configure encoder and button
-  pinMode(ROTARY_ANGLE_SENSOR, INPUT); // A0 不需要手动 pinMode
+  // Initialize rotary angle sensor and button
+  pinMode(ROTARY_ANGLE_SENSOR, INPUT); // A0 doesn't require manual pinMode
   pinMode(BUTTON_ANGLE_SENSOR, INPUT);
 
   // Connect to WiFi
   startWifi();
   
-  // Connect to MQTT broker
+  // Connect to the MQTT broker
   client.setServer(mqtt_server, mqtt_port);
   client.setBufferSize(2000);
   client.setCallback(callback);
 
   Serial.println("Set-up complete");
-  // 定时器任务
-  buttonTicker.attach_ms(50, checkButtonPress); // 每 50ms 检查按钮
-  knobTicker.attach_ms(50, handleUserSelection); // 每 50ms 检查旋钮
+
+  // Schedule tasks with tickers
+  buttonTicker.attach_ms(50, checkButtonPress); // Check button every 50ms
+  knobTicker.attach_ms(50, handleUserSelection); // Check rotary sensor every 50ms
 }
  
 void loop() {
-  // Reconnect if necessary
+  // Reconnect to MQTT if necessary
   if (!client.connected()) {
     reconnectMQTT();
   }
+  // Reconnect to WiFi if disconnected
   if (WiFi.status() != WL_CONNECTED){
     startWifi();
   }
-  // keep mqtt alive
+  // Keep MQTT connection alive
   client.loop();
 }
 
@@ -92,89 +101,66 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message received on topic: ");
   Serial.println(topic);
 
-  // Check which topic the message is received from
+  // Check which topic the message is from
   if (strcmp(topic, mqtt_topic) == 0) {
     handleTrainData(payload, length);
-  }  else {
+  } else {
     Serial.println("Unknown topic");
   }
 }
 
+// Parse incoming train data and store in arrays
 void handleTrainData(byte* payload, unsigned int length) {
-  // 创建一个 JSON 文档对象来存储解析后的数据
-  DynamicJsonDocument doc(1024);  // 为 JSON 文档分配足够大的空间
+  // Create a JSON document object to store parsed data
+  DynamicJsonDocument doc(1024);  // Allocate sufficient space for the JSON document
   DeserializationError error = deserializeJson(doc, payload, length);
 
-  // 检查 JSON 解析是否成功
+  // Check if JSON parsing was successful
   if (error) {
     Serial.print("JSON parsing failed: ");
     Serial.println(error.c_str());
     return;
   }
 
-  // 打印接收到的 JSON 数据（调试用）
-  //Serial.println("Parsed JSON:");
-  //serializeJsonPretty(doc, Serial);
+  // Initialize arrays for train times
+  westBoundTimes[0] = doc["central_inbound_timeToStation"];    // Central
+  westBoundTimes[1] = doc["dlr_inbound_timeToStation"];        // DLR
+  westBoundTimes[2] = doc["elizabeth_inbound_timeToStation"];  // Elizabeth
+  westBoundTimes[3] = doc["jubilee_inbound_timeToStation"];    // Jubilee
 
-  // 初始化地铁线路的时间数组
-  inboundTimes[0] = doc["central_inbound_timeToStation"];    // Central
-  inboundTimes[1] = doc["dlr_inbound_timeToStation"];        // DLR
-  inboundTimes[2] = doc["elizabeth_inbound_timeToStation"];  // Elizabeth
-  inboundTimes[3] = doc["jubilee_inbound_timeToStation"];    // Jubilee
-
-  outboundTimes[0] = -1;  // Central没有outbound数据，填充为-1
-  outboundTimes[1] = doc["dlr_outbound_timeToStation"];  // DLR
-  outboundTimes[2] = -1;  // Elizabeth没有outbound数据，填充为-1
-  outboundTimes[3] = -1;  // Jubilee没有outbound数据，填充为-1
-
-  // 打印解析后的数组内容
-  Serial.println("\nInbound Times:");
-  for (int i = 0; i < NUM_LINES; i++) {
-    Serial.print("Line ");
-    Serial.print(lineNames[i]);  // 映射线路名称
-    Serial.print(": ");
-    Serial.println(inboundTimes[i]);
-  }
-
-  Serial.println("\nOutbound Times:");
-  for (int i = 0; i < NUM_LINES; i++) {
-    Serial.print("Line ");
-    Serial.print(lineNames[i]);  // 映射线路名称
-    Serial.print(": ");
-    Serial.println(outboundTimes[i]);
-  }
+  eastBoundTimes[0] = -1;  // No outbound data for Central
+  eastBoundTimes[1] = doc["dlr_outbound_timeToStation"];  // DLR
+  eastBoundTimes[2] = -1;  // No outbound data for Elizabeth
+  eastBoundTimes[3] = -1;  // No outbound data for Jubilee
 }
 
-void startWifi(){
-  // We start by connecting to a WiFi network
+void startWifi() {
+  // Start connecting to the WiFi network
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
 
-  // check to see if connected and wait until you are
+  // Wait until connected
   int counter = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(600);
     Serial.print(".");
   }
 
-  Serial.println("");
-  Serial.println("WiFi connected");
+  Serial.println("\nWiFi connected");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-
 }
 
 void reconnectMQTT() {
-  // Loop until we're reconnected
+  // Loop until the client is reconnected
   while (!client.connected()) {
     Serial.println("Connecting to MQTT...");
     if (client.connect("ESP8266Client-neo2-ucjtdjw", mqtt_username, mqtt_password)) {
       Serial.println("connected");
-      // Subscribe to the topic you want to listen to
+      // Subscribe to the topic
       client.subscribe(mqtt_topic);
-      //client.subscribe(mqtt_topic_all);
       Serial.println("Subscribed to MQTT topics");
     } else {
       Serial.print("failed, rc=");
@@ -185,10 +171,10 @@ void reconnectMQTT() {
   }
 }
 
-// 检查按钮按下
+// Check button press
 void checkButtonPress() {
   static unsigned long lastCheckTime = 0;
-  if (millis() - lastCheckTime < 500) return; // 每隔50ms检查一次
+  if (millis() - lastCheckTime < 500) return; // Check every 50ms
   lastCheckTime = millis();
 
   static int lastButtonState = LOW;
@@ -203,23 +189,35 @@ void checkButtonPress() {
   lastButtonState = currentButtonState;
 }
 
-// 处理旋钮输入
+// Handle rotary angle sensor input
 void handleUserSelection() {
   static unsigned long lastCheckTime = 0;
-  if (millis() - lastCheckTime < 500) return; // 每隔50ms检查一次
+  if (millis() - lastCheckTime < 500) return; // Check every 50ms
   lastCheckTime = millis();
 
   float currentAngle = getEncoderStage();
 
-  int newSelectedLine = mapAngleToDataType(currentAngle);
+  int newSelectedLine = mapAngleToDataType(currentAngle); // Map angle to line index
   if (newSelectedLine != selectedLineNum) {
     selectedLineNum = newSelectedLine;
+
+    // Select array based on Eastbound or Westbound
+    int timeToStation = isEastbound 
+                        ? eastBoundTimes[selectedLineNum - 1] // Eastbound
+                        : westBoundTimes[selectedLineNum - 1]; // Westbound
+
+    // Print the selected line and time
     Serial.print("Selected Line: ");
-    Serial.println(lineNames[selectedLineNum - 1]);
+    Serial.println(lineNames[selectedLineNum - 1]); // Print line name
+    Serial.print("Direction: ");
+    Serial.println(isEastbound ? "Eastbound" : "Westbound"); // Print direction
+    Serial.print("Time to station: ");
+    Serial.println(timeToStation); // Print time to station
+    Serial.print("\n");
   }
 }
 
-// 读取旋钮角度
+// Get rotary angle
 float getEncoderStage() {
   int sensorValue = analogRead(ROTARY_ANGLE_SENSOR);
   float voltage = (float)sensorValue * ADC_REF / 1023.0;
@@ -227,7 +225,7 @@ float getEncoderStage() {
   return degrees;
 }
 
-// 映射旋钮角度到线路索引
+// Map rotary angle to line index
 int mapAngleToDataType(float angle) {
   if (angle >= 0 && angle <= 75) return 1;
   if (angle > 75 && angle <= 150) return 2;
