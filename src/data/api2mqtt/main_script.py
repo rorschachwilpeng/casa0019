@@ -19,14 +19,6 @@ client.loop_start()
 
 while True:
     process_all_lines_and_save()
-    # for line_name, stop_id in lines.items():
-    #     url = api_url_template % stop_id
-    #     raw_data = fetch_data_from_api(url)
-    #     if raw_data:
-    #         single_data = filter_and_trim_data(raw_data, line_name)
-    #         if single_data:
-    #             process_data_and_save(line_name, single_data)
-    
     publish_all_files(JSON_DIRECTORY, MQTT_TOPIC_BASE, client)
     print(f"Data fetched and published. Waiting {FETCH_UPLOAD_INTERVAL} seconds...")
     time.sleep(FETCH_UPLOAD_INTERVAL)
