@@ -1,6 +1,15 @@
 import os
 import json
 import paho.mqtt.client as mqtt
+############################## PI INTRUDUCTION ##############################
+####1. Running this script on your PiCloud
+####2. acess the real-time data by searching: "http://<server-ip>:5000/get-json/linesinfo"
+#  In our case, the search will be: "http://10.129.111.16:5000/get-json/linesinfo"
+    ####3. If you run mutiple "main_script.py" by accident: 
+        ####3.1. use "ps aux | grep main_script.py" in your command line. 
+        ####3.2. find the pid of the "main_script.py"
+        ####type in: "kill pid(the one you spoted)"
+
 
 def publish_json(client, file_path, topic):
     """
