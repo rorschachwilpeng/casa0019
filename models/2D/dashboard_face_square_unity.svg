@@ -27,16 +27,16 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.44159554"
-     inkscape:cx="450.63861"
-     inkscape:cy="414.40636"
+     inkscape:zoom="0.3122552"
+     inkscape:cx="389.10481"
+     inkscape:cy="646.90676"
      inkscape:window-width="1280"
      inkscape:window-height="650"
      inkscape:window-x="-6"
      inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer2"
-     inkscape:export-bgcolor="#ffffff00"
+     inkscape:export-bgcolor="#000000ff"
      showgrid="false" />
   <defs
      id="defs1">
@@ -376,9 +376,9 @@
        style="font-size:16px;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#ffffff;fill-opacity:1;stroke:#777777;stroke-width:1.88976;stroke-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan2"><tspan
+         id="tspan19"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;stroke:none"
-           id="tspan1">5 min</tspan></tspan></text>
+           id="tspan18">5 min</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.13229167,-0.22913589,0.22913589,0.13229167,-6.1988395,99.32085)"
@@ -386,9 +386,9 @@
        style="font-size:16px;white-space:pre;shape-inside:url(#rect2-8);display:inline;fill:#ffffff;fill-opacity:1;stroke:#777777;stroke-width:1.88976;stroke-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan4"><tspan
+         id="tspan21"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;stroke:none"
-           id="tspan3">10 min</tspan></tspan></text>
+           id="tspan20">10 min</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-4.559539,42.14653)"
@@ -396,7 +396,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;white-space:pre;shape-inside:url(#rect2-8-9);display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan5">Bad Service</tspan></text>
+         id="tspan22">Bad Service</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,117.50958,42.14653)"
@@ -404,9 +404,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect2-8-9-3-1);display:inline;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan7"><tspan
+         id="tspan24"><tspan
            style="baseline-shift:baseline;vector-effect:none;stop-color:#000000;stop-opacity:1"
-           id="tspan6">Good Service</tspan></tspan></text>
+           id="tspan23">Good Service</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,34.895203,116.32965)"
@@ -414,7 +414,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect2-8-9-3-1-0);display:inline;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan8">Elizabeth</tspan></text>
+         id="tspan25">Elizabeth</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,36.748781,97.60313)"
@@ -422,7 +422,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect2-8-9-3-1-0-9);display:inline;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan9">Central</tspan></text>
+         id="tspan26">Central</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,84.352608,97.6746)"
@@ -432,7 +432,7 @@
        inkscape:transform-center-y="-0.67404728"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan10">DLR</tspan></text>
+         id="tspan27">DLR</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,83.292499,116.32953)"
@@ -442,7 +442,7 @@
        inkscape:transform-center-y="-0.67404728"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan11">Jubilee</tspan></text>
+         id="tspan28">Jubilee</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.13229167,-0.22913589,0.22913589,0.13229167,-16.547418,93.511677)"
@@ -450,9 +450,9 @@
        style="font-size:16px;white-space:pre;shape-inside:url(#rect2-8-08);display:inline;fill:#ffffff;fill-opacity:1;stroke:#777777;stroke-width:1.88976;stroke-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan13"><tspan
+         id="tspan30"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;stroke:none"
-           id="tspan12">15 min</tspan></tspan></text>
+           id="tspan29">15 min</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.13229167,-0.22913589,0.22913589,0.13229167,-25.213183,88.560991)"
@@ -460,9 +460,9 @@
        style="font-size:16px;white-space:pre;shape-inside:url(#rect2-8-08-8);display:inline;fill:#ffffff;fill-opacity:1;stroke:#777777;stroke-width:1.88976;stroke-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan15"><tspan
+         id="tspan32"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;stroke:none"
-           id="tspan14">20 min</tspan></tspan></text>
+           id="tspan31">20 min</tspan></tspan></text>
     <path
        style="font-variation-settings:normal;display:inline;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path40-9"
@@ -535,9 +535,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:pre;shape-inside:url(#rect46);display:inline;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"><tspan
          x="150.55078"
          y="252.8125"
-         id="tspan17"><tspan
+         id="tspan34"><tspan
            style="baseline-shift:baseline;vector-effect:none;stop-color:#000000;stop-opacity:1"
-           id="tspan16">Stratford Station</tspan></tspan></text>
+           id="tspan33">Stratford Station</tspan></tspan></text>
     <g
        id="g38"
        transform="matrix(0.02012886,0,0,0.02012886,87.773312,126.08341)">
