@@ -37,18 +37,18 @@ The **SubRadar** project is a sensor-based system that visualizes real-time tran
 
 ## Data Device
 ### DATA DEVICE (Physical)
-Color-Coded Indicators and Pointer: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
+**Color-Coded Indicators and Pointer**: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
 
-Knob and Button Interaction: Users can rotate the knob to select specific line information and press the button to switch the train direction between Westbound and Eastbound.
+**Knob and Button Interaction**: Users can rotate the knob to select specific line information and press the button to switch the train direction between Westbound and Eastbound.
 
-LED Display: LED lights on the pointer display the arrival time (in minutes) of the next train, allowing users to quickly assess the waiting time.
+**LED Display**: LED lights on the pointer display the arrival time (in minutes) of the next train, allowing users to quickly assess the waiting time.
 
 ### DATA DEVICE (Digital)
-Real-Time Station Information: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.
+**Real-Time Station Information**: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.
 
-Arrival Time: The device screen updates the arrival time of the next train at the nearest station to ensure timely information.
+**Arrival Time**: The device screen updates the arrival time of the next train at the nearest station to ensure timely information.
 
-Service Quality: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.
+**Service Quality**: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.
 
 ### 
 
