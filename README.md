@@ -54,3 +54,7 @@ Service Quality: The overall service quality of the selected line is visually re
 
 ## HOW TO USE
 Launch the App: Open the app and point it at the screen of the data device. Augmented Reality (AR) information will be overlaid on the data device.
+
+
+**[User Handle Video](https://drive.google.com/drive/folders/1uhCp3n9zvYmw-k7yBAYddTRGSpbOPPon?usp=drive_link)**
+
