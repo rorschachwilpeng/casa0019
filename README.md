@@ -8,9 +8,13 @@
 2. [Dataset](#dataset)
 3. [Data Device (Physical&Digital)](#data-device)
 4. [How to use](#how-to-use)
+5. [References](#references)
 
 ## Project Overview
-The **SubRadar** project is a sensor-based system that visualizes real-time transportation data. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates. Users interact with the device through a rotary knob, button, and LED indicators.
+The **SubRadar** project is a sensor-based system that visualizes real-time transportation data. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates to people working and studying at UCL East. Users interact with the device through a rotary knob, button, and LED indicators.
+
+### Rationale
+Oftentimes, when using applications such as Citymapper or Google Maps, it can take some time to plot in a route or check the latest train times. This 
 
 ## Dataset
 **Data Source: [TFL Tube Data](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals)**
@@ -57,4 +61,6 @@ Launch the App: Open the app and point it at the screen of the data device. Augm
 
 
 **[User Handle Video](https://drive.google.com/drive/folders/1uhCp3n9zvYmw-k7yBAYddTRGSpbOPPon?usp=drive_link)**
+
+## References
 
