@@ -7,7 +7,7 @@
 1. [Project Overview](#project-overview)
 2. [Design](#design)
 3. [Dataset](#dataset)
-4. [Data Device (Physical&Digital)](#data-device)
+4. [The Device (Physical&Digital)](#the-device)
 5. [How to use](#how-to-use)
 6. [References](#references)
 
@@ -32,6 +32,16 @@ However, without a vaccuum-tube display available to us, we had to simulate the 
 <img src="https://github.com/user-attachments/assets/3dcef05e-29e9-4e5e-bdc9-9f509e932c13" width="400"/>
 
 *Michael Okuda's backlit graphic designs for Star Trek, affectionately known by fans as 'Okudagrams'*
+
+### Physical Design
+
+The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's early designs for Apple, using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
+
+<img src="https://github.com/user-attachments/assets/6cc45535-6640-4a4f-bd82-5e59a6c8c57b" width="400"/>
+
+<img src="https://github.com/user-attachments/assets/225f7708-37b8-4464-9222-6c3929040e13" width="400"/>
+
+*Screenshots from Fusion360 showing the curved design of the back shell*
 
 ### User interface and experience
 
@@ -60,7 +70,7 @@ However, without a vaccuum-tube display available to us, we had to simulate the 
 
 
 
-## Data Device
+## The Device
 ### DATA DEVICE (Physical)
 **Color-Coded Indicators and Pointer**: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
 
