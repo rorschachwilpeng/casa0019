@@ -5,16 +5,29 @@
 
 ## Table of Contents
 1. [Project Overview](#project--overview)
-2. [Dataset](#dataset)
-3. [Data Device (Physical&Digital)](#data-device)
-4. [How to use](#how-to-use)
-5. [References](#references)
+2. [Design](#design)
+3. [Dataset](#dataset)
+4. [Data Device (Physical&Digital)](#data-device)
+5. [How to use](#how-to-use)
+6. [References](#references)
 
 ## Project Overview
-The **SubRadar** project is a sensor-based system that visualizes real-time transportation data. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates to people working and studying at UCL East. Users interact with the device through a rotary knob, button, and LED indicators.
+The **SubRadar** project is a sensor-based system that visualizes real-time transportation data for Stratford Underground Station. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates to people working and studying at UCL East. Users interact with the device through a rotary knob, button, and LED indicators.
 
 ### Rationale
-Oftentimes, when using applications such as Citymapper or Google Maps, it can take some time to plot in a route or check the latest train times. This 
+Oftentimes, when using applications such as Citymapper or Google Maps, it can take some time to plot in a route or check the latest train times. This project therefore aimed to distill this information into a physical dial device, with digital elements, such that students and staff preparing to leave UCL East after class or work would be able to, at a glance, get all the latest information on the nearest underground trains with minimal effort. It was hoped that through a unique radar-inspired dial, this information could be presented to the UCL East audience in a novel and engaging way.
+
+## Design
+
+### Inspiration
+SubRadar draws largely on sources such as classic science fiction and early 21st century consumer gadgets. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device (common in the 20th cenutry) in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
+
+<img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="200"/>
+*An oscilloscope, a type of device that traditionally used a vaccum-tube display*
+
+### User interface and experience
+
+#### Wirerframes
 
 ## Dataset
 **Data Source: [TFL Tube Data](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals)**
