@@ -20,12 +20,14 @@ Oftentimes, when using applications such as Citymapper or Google Maps, it can ta
 ## Design
 
 ### Inspiration
-SubRadar draws largely on sources such as classic science fiction and early 21st century consumer gadgets. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device (common in the 20th cenutry) in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
+SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device (common in the 20th cenutry) in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
 
 
 <img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="200"/>
 
 *An oscilloscope, a type of device that traditionally used a vaccum-tube display*
+
+However, without a vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. In particular, we took inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation. In an interview with Adam Savage (formerly of Mythbusters), he described how he used lights placed behind dark coloured acrylic to create the impression of a touch-screen display. We used a similar approach, with LEDs placed behind frosted acrylic to create the grainy effect of a vaccum-tube display.
 
 ### User interface and experience
 
@@ -79,3 +81,4 @@ Launch the App: Open the app and point it at the screen of the data device. Augm
 
 ## References
 
+https://en.wikipedia.org/wiki/Oscilloscope#/media/File:Sine_wave_10_kHz_displayed_on_analog_oscilloscope.jpg
