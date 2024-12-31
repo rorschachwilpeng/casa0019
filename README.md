@@ -35,7 +35,7 @@ However, without a vaccuum-tube display available to us, we had to simulate the 
 
 ### Physical Design
 
-The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's early designs for Apple, using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
+The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's earlier designs for Apple, using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
 
 <img src="https://github.com/user-attachments/assets/6cc45535-6640-4a4f-bd82-5e59a6c8c57b" width="600"/>
 
