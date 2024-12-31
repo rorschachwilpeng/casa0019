@@ -4,7 +4,7 @@
 </p>
 
 ## Table of Contents
-1. [Project Overview](#project--overview)
+1. [Project Overview](#project-overview)
 2. [Design](#design)
 3. [Dataset](#dataset)
 4. [Data Device (Physical&Digital)](#data-device)
