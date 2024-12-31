@@ -23,13 +23,13 @@ Oftentimes, when using applications such as Citymapper or Google Maps, it can ta
 SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device (common in the 20th cenutry) in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
 
 
-<img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="400"/>
+<img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="500"/>
 
 *An oscilloscope, a type of device that traditionally used a vaccum-tube display*
 
 However, without a vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. In particular, we took inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation. In an interview with Adam Savage (formerly of Mythbusters), he described how he used lights placed behind dark coloured acrylic to create the impression of a touch-screen display. We used a similar approach, with LEDs placed behind frosted acrylic to create the grainy effect of a vaccum-tube display.
 
-<img src="https://github.com/user-attachments/assets/3dcef05e-29e9-4e5e-bdc9-9f509e932c13" width="400"/>
+<img src="https://github.com/user-attachments/assets/3dcef05e-29e9-4e5e-bdc9-9f509e932c13" width="500"/>
 
 *Michael Okuda's backlit graphic designs for Star Trek, affectionately known by fans as 'Okudagrams'*
 
