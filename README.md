@@ -36,8 +36,27 @@ The **SubRadar** project is a sensor-based system that visualizes real-time tran
 
 
 ## Data Device
-### DATA DEVICE (Physical)
+### DATA DEVICE (Physical) ------------ YouTian Peng & QiQing Dai
+#### Hardware Setup
+**Components**:
+- ESP8266:
+- LCD
+- NeoPixel
+- Rotary Encoder
+- Button
+
+<p align="center">
+  <img src="more_info/imgs/ESP8266.jpg" alt="schematics" width="600">
+</p>
+
+
+#### Firmware Design
 **Color-Coded Indicators and Pointer**: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
+
+
+
+
+
 
 **Knob and Button Interaction**: Users can rotate the knob to select specific line information and press the button to switch the train direction between Westbound and Eastbound.
 
