@@ -24,7 +24,8 @@ Oftentimes, when using applications such as Citymapper or Google Maps, it can ta
 SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
 
 
-<img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="500"/>
+<img src="https://github.com/user-attachments/assets/de71c9f3-05c1-4335-a04e-ef39f0060e15" width="500"/>
+
 
 *An oscilloscope, a type of device that traditionally used a vaccum-tube display (Wikipedia, 2025)*
 
