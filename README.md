@@ -186,7 +186,7 @@ The firmware is developed in C++ using the *Arduino Integrated Development Envir
 
 ## Challenges & Limitations
 
-## Enclosure and product design
+### Enclosure and product design
 Designing and building the enclosure was filled with many challenges, primarily due to the ambitiously curved nature of the rear shell. It took multiple tries to successfully print the component, and the precision of the Bambu Lab printer was largely the reason why the final print succeeded. For the UV printing of the front face with the UI, this turned out to be mostly successful on the first try, but the component still suffered from some of the print being off registration and the black acrylic, though it worked well to prevent light leaking from inside the device, also made it difficult to achieve good print opacity due to the dark base colour, even with 2 white underlayers. If we were to update the device design, with more time, it would be useful to do a few more test prints to ensure the registration is correct. Furthermore, to solve the opacity problem, a lighter colour of acrylic could be used, and black paint applied to the interior face to reduce light leakage.
 
 ## HOW TO USE
