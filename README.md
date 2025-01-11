@@ -50,7 +50,8 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 #### Front panel with final UI
 
-<img src="https://github.com/user-attachments/assets/d7ab8429-ab91-4cef-8451-f44902c43a7" width="600"/>
+<img src="https://github.com/user-attachments/assets/2f0be8da-7976-4121-bb8d-a55cf4bd47df" width="600"/>
+
 
 <img src="https://github.com/user-attachments/assets/a5e0031e-485b-47bb-a036-4d1ab1007f4c" width="600"/>
 
