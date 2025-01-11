@@ -96,36 +96,36 @@ def process_all_lines_and_save():
             print(f"Fetching data for line {line_name}, direction {direction}...")
             api_data = fetch_data_from_api(url)
 
-            # 若 API 数据为空，直接跳过
+            # If API data is empty, skip
             if not api_data:
                 print(f"No data received for line {line_name}, direction {direction}. Skipping update.")
                 continue
 
-            # 特殊处理 elizabeth 线路的 outbound 方向
+            # Special handling for elizabeth line outbound direction
             if line_name.lower() == "elizabeth" and direction == "outbound":
-                # 直接设置 service_level 为 0.7
+                # Set service_level directly to 0.7
                 flat_data[f"{line_name.lower()}_{direction}_service_level"] = 0.7
                 print(f"Set {line_name} {direction} service level to 0.7")
-                continue  # 跳过后续处理
+                continue  # Skip further processing
 
-            # 过滤唯一列车数据，并筛选方向
+            # Filter unique train data and select direction
             unique_trains = filter_unique_trains(api_data, direction)
 
-            # 若 unique_trains 为空或没有有效数据，直接跳过
+            # If unique_trains is empty or has no valid data, skip
             if not unique_trains:
                 print(f"No valid unique trains data for line {line_name}, direction {direction}. Skipping update.")
                 continue
 
-            # 若只有一个火车数据，跳过间隔时间计算，但可以更新数据
+            # If only one train data exists, skip interval calculation but update data
             if len(unique_trains) <= 1:
                 print(f"Only one valid train for line {line_name}, direction {direction}. Updating with limited data.")
                 flat_data[f"{line_name.lower()}_{direction}_timeToStation"] = unique_trains[0].get("timeToStation", 0)
                 flat_data[f"{line_name.lower()}_{direction}_direction"] = unique_trains[0].get("direction", direction)
-                # 可以选择是否设置一个默认的 service_level
+                # Optional: set a default service_level
                 flat_data[f"{line_name.lower()}_{direction}_service_level"] = 0.0
                 continue
 
-            # 处理有效的列车到站时间
+            # Process valid train arrival times
             waiting_times = [
                 item["timeToStation"] / 60 for item in unique_trains if item.get("timeToStation")
             ]
@@ -147,15 +147,15 @@ def process_all_lines_and_save():
             else:
                 overall_service_level = 0.0
 
-            # 更新扁平化数据
+            # Update flattened data
             prefix = f"{line_name.lower()}_{direction}_"
-            # 选择第一个列车的数据进行记录
+            # Record data from the first train
             item = unique_trains[0]
             flat_data[f"{prefix}timeToStation"] = item.get("timeToStation")
             flat_data[f"{prefix}direction"] = item.get("direction")
             flat_data[f"{prefix}service_level"] = overall_service_level
 
-    # 过滤并保存最终数据
+    # Filter and save final data
     allowed_keys = {"timeToStation", "direction", "service_level"}
     filtered_data = filter_json_fields(flat_data, allowed_keys)
     file_path = os.path.join(output_dir, "linesinfo.json")
