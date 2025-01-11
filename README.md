@@ -7,7 +7,7 @@
 1. [Project Overview](#project-overview)
 2. [Design](#design)
 3. [Dataset](#dataset)
-4. [The Device (Physical&Digital)](#the-device)
+4. [Device Engineering (Physical & Digital)](#device-engineering)
 5. [How to use](#how-to-use)
 6. [References](#references)
 
