@@ -8,8 +8,9 @@
 2. [Design](#design)
 3. [Dataset](#dataset)
 4. [Device Engineering (Physical & Digital)](#device-engineering)
-5. [How to use](#how-to-use)
-6. [References](#references)
+5. [Challenges & Limitations](#challenges-and-limitations)
+6. [How to use](#how-to-use)
+7. [References](#references)
 
 ## Project Overview
 The **SubRadar** project is a sensor-based system that visualizes real-time transportation data for Stratford Underground Station. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates to people working and studying at UCL East. Users interact with the device through a rotary knob, button, and LED indicators.
@@ -65,10 +66,7 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 | `serviceLevel`    | Line's overall service level(50%*Passenger Waiting Time + 50%*Service Interval Variability)                    |                  Demonstrate the line's service level                                    |
 
 ## Device Engineering
-### DATA DEVICE (Physical)
-=======
-## Data Device
-### DATA DEVICE (Physical) ------------ YouTian Peng & QiQing Dai
+### Physical Hardware & Firmware ------------ YouTian Peng & QiQing Dai
 #### Hardware Setup
 **Components**:
 - ESP8266:
@@ -94,14 +92,14 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 **LED Display**: LED lights on the pointer display the arrival time (in minutes) of the next train, allowing users to quickly assess the waiting time.
 
-### DATA DEVICE (Digital)
+### Digital Twin
 **Real-Time Station Information**: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.
 
 **Arrival Time**: The device screen updates the arrival time of the next train at the nearest station to ensure timely information.
 
 **Service Quality**: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.
 
-### 
+## Challenges & Limitations
 
 ## HOW TO USE
 Launch the App: Open the app and point it at the screen of the data device. Augmented Reality (AR) information will be overlaid on the data device.
