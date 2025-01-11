@@ -20,22 +20,22 @@ Oftentimes, when using applications such as Citymapper or Google Maps, it can ta
 ## Design
 
 ### Inspiration
-SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device (common in the 20th cenutry) in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
+SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
 
 
 <img src="https://github.com/user-attachments/assets/5cf82560-f822-49f0-9165-f412aef94058" width="500"/>
 
-*An oscilloscope, a type of device that traditionally used a vaccum-tube display*
+*An oscilloscope, a type of device that traditionally used a vaccum-tube display (Wikipedia, 2025)*
 
-However, without a vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. In particular, we took inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation. In an interview with Adam Savage (formerly of Mythbusters), he described how he used lights placed behind dark coloured acrylic to create the impression of a touch-screen display. We used a similar approach, with LEDs placed behind frosted acrylic to create the grainy effect of a vaccum-tube display.
+However, without a vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. In particular, we took inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation. In an interview with Adam Savage (formerly of Mythbusters), he described how he used lights placed behind dark coloured acrylic to create the impression of a touch-screen display (Savage, 2024). We used a similar approach, with LEDs placed behind frosted acrylic to create the grainy effect of a vaccum-tube display.
 
 <img src="https://github.com/user-attachments/assets/3dcef05e-29e9-4e5e-bdc9-9f509e932c13" width="500"/>
 
-*Michael Okuda's backlit graphic designs for Star Trek, affectionately known by fans as 'Okudagrams'*
+*Michael Okuda's backlit graphic designs for Star Trek, affectionately known by fans as 'Okudagrams' (Nguyen, 2015)*
 
 ### Physical Design
 
-The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's earlier designs for Apple, using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
+The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's earlier designs for Apple, (Ravenscroft, 2019) using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
 
 <img src="https://github.com/user-attachments/assets/6cc45535-6640-4a4f-bd82-5e59a6c8c57b" width="600"/>
 
@@ -64,14 +64,7 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 | `timeToStation`           | Time for the nearest tube to the station                                 | Notify user                                                       |
 | `serviceLevel`    | Line's overall service level(50%*Passenger Waiting Time + 50%*Service Interval Variability)                    |                  Demonstrate the line's service level                                    |
 
-
-
-
-
-
-
-<<<<<<< HEAD
-## The Device
+## Device Engineering
 ### DATA DEVICE (Physical)
 =======
 ## Data Device
@@ -90,7 +83,6 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 
 #### Firmware Design
->>>>>>> 5d65dc9 (update English comments)
 **Color-Coded Indicators and Pointer**: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
 
 
@@ -119,11 +111,10 @@ Launch the App: Open the app and point it at the screen of the data device. Augm
 
 ## References
 
-### Sources
+Nguyen, W. (2015). *An Ode to the Okudagram.* [online] TREKNEWS.NET. Available at: https://treknews.net/2015/07/23/ode-to-okudagram/ [Accessed 11 Jan. 2025].
 
-https://youtu.be/D24tYFIVyv0?si=6iS26g7v1mN3KYin
+Ravenscroft, T. (2019). *Jony Ive’s 10 most revolutionary designs for Apple*. [online] Dezeen. Available at: https://www.dezeen.com/2019/06/28/jony-ive-designs-apple-imac-ipod-iphone/ [Accessed 11 Jan. 2025].
 
-### Images
+Savage, A. (2024). *Why Star Trek’s Graphic Design Makes Sense.* [online] YouTube. Available at: https://youtu.be/D24tYFIVyv0?si=6iS26g7v1mN3KYin [Accessed 11 Jan. 2025].
 
-https://en.wikipedia.org/wiki/Oscilloscope#/media/File:Sine_wave_10_kHz_displayed_on_analog_oscilloscope.jpg
-https://treknews.net/2015/07/23/ode-to-okudagram/
+Wikipedia (2025). *Oscilloscope.* [online] Wikipedia. Available at: https://en.wikipedia.org/wiki/Oscilloscope [Accessed 11 Jan. 2025].
