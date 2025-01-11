@@ -95,6 +95,7 @@ In order to measure the Overall Service Level, the group proposed an integrated 
 The preprocessing of raw data involves three key steps: **data cleaning**, **filtering**, and **transformation**. These steps ensure that the data is clean, consistent, and ready for further analysis.
 
 **1. Data Cleaning**
+
 Data cleaning focuses on handling missing or incomplete data. For instance, the script ```fetch_and_process.py``` checks whether the API returns valid data. If no data is received for a specific line or direction, the system prints a warning message and skips further processing for that update:
 
 ```python
@@ -104,6 +105,7 @@ if not api_data:
 ```
 
 **2. Data Filtering**
+
 To ensure relevance and avoid redundancy, the data filtering process includes:
 
 - **Removing Duplicate Train Information**: Only unique train data is retained to prevent duplication.
@@ -119,6 +121,7 @@ To ensure relevance and avoid redundancy, the data filtering process includes:
     ```
 
 **3. Data Transformation**
+
 The transformation process ensures that the data is standardized and ready for use by converting raw API responses into a consistent JSON format. Train arrival times are reformatted to follow a uniform time structure, making the data easier to process and analyze. Additionally, directions such as "inbound" and "outbound" are mapped to standardized terms like "westbound" and "eastbound" to enhance clarity and consistency across the system.
 
 
