@@ -51,6 +51,7 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 #### Front panel with final UI
 
 <img src="https://github.com/user-attachments/assets/d7ab8429-ab91-4cef-8451-f44902c43a7" width="600"/>
+
 <img src="https://github.com/user-attachments/assets/a5e0031e-485b-47bb-a036-4d1ab1007f4c" width="600"/>
 
 The final UI was adapted from the wireframe designs to fit the dimensions of the pysical enclosure as built. These were then prepared for UV printing using GIMP and printed on a laser-cut piece of black acrylic. The graphics were printed using a technique very similar to screen printing, with 2 layers of white laid down before the final colour print, in an attempt to ensure the print had sufficient opacity. A piece of frosted red acrylic was chosen instead of the intital transparent purple colour in the original wireframe design, as it offered nice visual effects with the backlighting, that mimicked the appearance of a vaccuum-tube display very well.
