@@ -5,7 +5,7 @@
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Design](#design)
+2. [Enclosure & Industrial Design](#enclosure-&-industrial-design)
 3. [Dataset](#dataset)
 4. [Device Engineering (Physical & Digital)](#device-engineering)
 5. [Challenges & Limitations](#challenges-and-limitations)
@@ -18,7 +18,7 @@ The **SubRadar** project is a sensor-based system that visualizes real-time tran
 ### Rationale
 Oftentimes, when using applications such as Citymapper or Google Maps, it can take some time to plot in a route or check the latest train times. This project therefore aimed to distill this information into a physical dial device, with digital elements, such that students and staff preparing to leave UCL East after class or work would be able to, at a glance, get all the latest information on the nearest underground trains with minimal effort. It was hoped that through a unique radar-inspired dial, this information could be presented to the UCL East audience in a novel and engaging way.
 
-## Design
+## Enclosure & Industrial Design
 
 ### Inspiration
 SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
@@ -34,7 +34,7 @@ However, without a vaccuum-tube display available to us, we had to simulate the 
 
 *Michael Okuda's backlit graphic designs for Star Trek, affectionately known by fans as 'Okudagrams' (Nguyen, 2015)*
 
-### Physical Design
+### Main enclosure
 
 The physical design was developed in Fusion360 and printed on a Bambu Lab 3D printer. To make the design look more appealing, inspiration was taken from Jony Ive's earlier designs for Apple, (Ravenscroft, 2019) using Fusion360's NURBS surface manipulation tool to create a curved back shell that creates an optical illusion, making the device look much thinner than it is in reality.
 
@@ -46,7 +46,14 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 ### User interface and experience
 
-#### Wirerframes
+#### Wirerframes 
+
+#### Front panel with final UI
+
+<img src="https://github.com/user-attachments/assets/d7ab8429-ab91-4cef-8451-f44902c43a7" width="600"/>
+<img src="https://github.com/user-attachments/assets/a5e0031e-485b-47bb-a036-4d1ab1007f4c" width="600"/>
+
+The final UI was adapted from the wireframe designs to fit the dimensions of the pysical enclosure as built. These were then prepared for UV printing using GIMP and printed on a laser-cut piece of black acrylic. The graphics were printed using a technique very similar to screen printing, with 2 layers of white laid down before the final colour print, in an attempt to ensure the print had sufficient opacity. A piece of frosted red acrylic was chosen instead of the intital transparent purple colour in the original wireframe design, as it offered nice visual effects with the backlighting, that mimicked the appearance of a vaccuum-tube display very well.
 
 ## Dataset
 **Data Source: [TFL Tube Data](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals)**
@@ -100,6 +107,9 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 **Service Quality**: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.
 
 ## Challenges & Limitations
+
+## Enclosure and product design
+Designing and building the enclosure was filled with many challenges, primarily due to the ambitiously curved nature of the rear shell. It took multiple tries to successfully print the component, and the precision of the Bambu Lab printer was largely the reason why the final print succeeded. For the UV printing of the front face with the UI, this turned out to be mostly successful on the first try, but the component still suffered from some of the print being off registration and the black acrylic, though it worked well to prevent light leaking from inside the device, also made it difficult to achieve good print opacity due to the dark base colour, even with 2 white underlayers. If we were to update the device design, with more time, it would be useful to do a few more test prints to ensure the registration is correct. Furthermore, to solve the opacity problem, a lighter colour of acrylic could be used, and black paint applied to the interior face to reduce light leakage.
 
 ## HOW TO USE
 Launch the App: Open the app and point it at the screen of the data device. Augmented Reality (AR) information will be overlaid on the data device.
