@@ -24,7 +24,7 @@ Oftentimes, when using applications such as Citymapper or Google Maps, it can ta
 SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
 
 
-<img src="https://github.com/user-attachments/assets/de71c9f3-05c1-4335-a04e-ef39f0060e15" width="500"/>
+<img src="https://en.wikipedia.org/wiki/Oscilloscope#/media/File:Sine_wave_10_kHz_displayed_on_analog_oscilloscope.jpg" width="500"/>
 
 
 *An oscilloscope, a type of device that traditionally used a vaccum-tube display (Wikipedia, 2025)*
@@ -52,7 +52,7 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 #### Front panel with final UI
 
-<img src="https://github.com/user-attachments/assets/1ba2cfd3-1c11-4175-8992-65a0196e093" width="600"/>
+<img src="https://github.com/user-attachments/assets/de71c9f3-05c1-4335-a04e-ef39f0060e15" width="600"/>
 
 
 <img src="https://github.com/user-attachments/assets/a5e0031e-485b-47bb-a036-4d1ab1007f4c" width="600"/>
