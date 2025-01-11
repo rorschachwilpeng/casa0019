@@ -6,7 +6,7 @@
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Enclosure & Industrial Design](#enclosure-&-industrial-design)
-3. [Dataset](#dataset)
+3. [Data](#data)
 4. [Device Engineering (Physical & Digital)](#device-engineering)
 5. [Challenges & Limitations](#challenges-and-limitations)
 6. [How to use](#how-to-use)
@@ -61,8 +61,9 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 The final UI was adapted from the wireframe designs to fit the dimensions of the pysical enclosure as built. These were then prepared for UV printing using GIMP and printed on a laser-cut piece of black acrylic. The graphics were printed using a technique very similar to screen printing, with 2 layers of white laid down before the final colour print, in an attempt to ensure the print had sufficient opacity. A piece of frosted red acrylic was chosen instead of the intital transparent purple colour in the original wireframe design, as it offered nice visual effects with the backlighting, that mimicked the appearance of a vaccuum-tube display very well.
 
-## Dataset
-**Data Source: [TFL Tube Data](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals)**
+## Data
+### Data Source
+The project utilizes the [Transport for London (TfL) Unified API](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals) to access real-time data on public transportation. This API provides comprehensive information across various transport modes, including live arrivals, line statuses, and station details. By integrating this API, the project ensures accurate and up-to-date data, enhancing the reliability and 
 
 *Used Data:*
 | **Field Name**       | **Meaning**                                | **Purpose**                                                                                         |
@@ -72,60 +73,105 @@ The final UI was adapted from the wireframe designs to fit the dimensions of the
 | `timeToStation`      | Remaining time to arrival                  | Used to calculate passenger waiting time                                                           |
 | `direction`          | Train direction                            | Used to distinguish service levels for different directions                                        |
 
+In order to measure the Overall Service Level, the group proposed an integrated index - **Overall Service Level**, which offers a comprehensive evaluation of transport service quality by combining key metrics such as ```Service Interval Variability``` and ```Passenger Waiting Time```. It provides an integrated measure of overall service stability and efficiency, with higher scores reflecting better service quality.
+
+| Metric | Method | Required Fields | Explanation |
+| --- | --- | --- | --- |
+| ```Service Interval Variability``` | Calculate the time intervals between consecutive trains using ```expectedArrival``` and compute the standard deviation. | ```expectedArrival```, ```lineName``` | A smaller standard deviation indicates more stable and reliable services, while larger values suggest irregular and less dependable operations.|
+| ```Passenger Waiting Time``` | Analyze the average timeToStation (remaining time for train arrival). | ```timeToStation```, ```lineName``` | Shorter waiting times indicate higher service efficiency, while longer times suggest inadequate service, impacting passenger experience. |
+| ```Overall Service Level``` | 0.5 * **Service Interval Variability** + 0.5* **Passenger Waiting Time** | ```Service Interval Variability```, ```Passenger Waiting Time``` | A composite metric assessing overall service stability and efficiency. Higher scores indicate better service quality. |
+
+
+
+
+
 *Output Data:*
 | **Field Name**       | **Meaning**                                | **Purpose**                                                                                         |
 |-----------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | `timeToStation`           | Time for the nearest tube to the station                                 | Notify user                                                       |
 | `serviceLevel`    | Line's overall service level(50%*Passenger Waiting Time + 50%*Service Interval Variability)                    |                  Demonstrate the line's service level                                    |
 
-## Device Engineering
-### Physical Hardware & Firmware ------------ YouTian Peng & QiQing Dai
-#### Hardware Setup
-**Components**:
-- ESP8266:
-- LCD
-- NeoPixel
-- Rotary Encoder
-- Button
+### Data Processing
+The preprocessing of raw data involves three key steps: **data cleaning**, **filtering**, and **transformation**. These steps ensure that the data is clean, consistent, and ready for further analysis.
 
+**1. Data Cleaning**
+Data cleaning focuses on handling missing or incomplete data. For instance, the script ```fetch_and_process.py``` checks whether the API returns valid data. If no data is received for a specific line or direction, the system prints a warning message and skips further processing for that update:
+
+```python
+if not api_data:
+    print(f"No data received for line {line_name}, direction {direction}. Skipping update.")
+    continue
+```
+
+**2. Data Filtering**
+To ensure relevance and avoid redundancy, the data filtering process includes:
+
+- **Removing Duplicate Train Information**: Only unique train data is retained to prevent duplication.
+
+- **Direction-Based Filtering**: The data is further refined by selecting train information specific to a given direction. For example, in ```fetch_and_process.py```, unique train data is filtered based on the specified direction. If no valid data is found, the system skips further processing:
+
+    ```python
+    unique_trains = filter_unique_trains(api_data, direction)
+
+    if not unique_trains:
+        print(f"No valid unique trains data for line {line_name}, direction {direction}. Skipping update.")
+        continue
+    ```
+
+**3. Data Transformation**
+The transformation process ensures that the data is standardized and ready for use by converting raw API responses into a consistent JSON format. Train arrival times are reformatted to follow a uniform time structure, making the data easier to process and analyze. Additionally, directions such as "inbound" and "outbound" are mapped to standardized terms like "westbound" and "eastbound" to enhance clarity and consistency across the system.
+
+
+### Data Management System
 <p align="center">
-  <img src="more_info/imgs/ESP8266.jpg" alt="schematics" width="600">
+  <img src="image/data.jpg" alt="NOVA" width="800">
 </p>
 
+The data management system depicted in the diagram ensures efficient handling and flow of information across the project. Data from TfL (Transport for London) is retrieved using Python scripts and processed in the Pi Cloud, where it is further distributed. The server, connected to the cloud, facilitates advanced computations and real-time updates.
 
-<<<<<<< HEAD
+MQTT is used to transmit processed data from the Pi Cloud to the physical device, enabling it to display real-time information such as train schedules and service quality. Simultaneously, the digital device receives updates directly from the server, ensuring synchronized data representation across both devices. This system leverages a cloud-based architecture to manage data acquisition, processing, and distribution seamlessly.
+
 
 
 
 
 ## Data Device
-### DATA DEVICE (Physical) ------------ YouTian Peng & QiQing Dai
-#### Hardware Setup
-**Components**:
-- ESP8266:
-- LCD
-- NeoPixel
-- Rotary Encoder
-- Button
+### DATA DEVICE (Physical)
 
+#### Board & Sensor
+| Specification         | **ESP8266**                                                                                                                                                       | **Rotary Encoder**                                                                                              | **Servo**                                                                                                       | **NeoPixel**                                                                                                    | **16x2 LCD**                                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **Microcontroller**   | Tensilica L106 32-bit RISC processor, clocked at 80 MHz (can be overclocked to 160 MHz)                                                                           | -                                                                                                              | -                                                                                                               | -                                                                                                              | -                                                                                                              |
+| **Operating Voltage**  | 3.3V                                                                                                                                                             | -                                                                                                              | 4.8V to 6V                                                                                                      | 5V                                                                                                              | 5V                                                                                                              |
+| **Digital I/O Pins**   | 16                                                                                                                                                               | -                                                                                                              | -                                                                                                               | **Data Pin**: GPIO0 (D2)<br> **Brightness**: 30 (0-255)<br> **Number of LEDs**: 16                              | **SDA Pin**: GPIO2 (D4)<br> **SCL Pin**: GPIO14 (D5)                                                            |
+| **Analog Input Pins**  | 1 (10-bit ADC)                                                                                                                                                    | -                                                                                                              | -                                                                                                               | -                                                                                                              | -                                                                                                              |
+| **Library Used**       | -                                                                                                                                                               | -                                                                                                              | Servo                                                                                                           | Adafruit NeoPixel                                                                                               | LiquidCrystal_I2C                                                                                               |
+| **Documentation**      | [ESP8266 Documentation](https://www.espressif.com/en/products/socs/esp8266)                                                                                     | [Rotary Encoder Link](https://example.com/rotary-encoder)                                                      | [Servo Motor Documentation](https://circuitdigest.com/article/servo-motor-working-and-basics)                   | [NeoPixel Documentation](https://www.adafruit.com/neopixel)                                                    | [16x2 LCD Documentation](https://www.watelectronics.com/lcd-16x2/)                                              |
+
+#### Schematics
 <p align="center">
-  <img src="more_info/imgs/ESP8266.jpg" alt="schematics" width="600">
+  <img src="image/ESP8266.jpg" alt="NOVA" width="800">
 </p>
 
 
-=======
->>>>>>> origin/main
 #### Firmware Design
-**Color-Coded Indicators and Pointer**: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.
+**Firmware Modules and Logic**
 
+- Initialization Module
 
+    Upon powering up, the firmware's Initialization Module configures the LCD, LEDs, servos, and network connections, including WiFi and MQTT setup for data communication. It also schedules periodic tasks like button monitoring and rotary encoder detection to enable user interaction.
 
+- Input Processing Module
 
+    The Input Processing Module interprets rotary encoder signals and button presses to execute actions like menu navigation or function selection, ensuring prompt and accurate device response.
 
+- Display Control Module
 
-**Knob and Button Interaction**: Users can rotate the knob to select specific line information and press the button to switch the train direction between Westbound and Eastbound.
+    The Display Control Module manages LED indicators, the LCD screen, and servos to provide real-time updates, display line and direction information, and indicate service levels through visual outputs.
 
-**LED Display**: LED lights on the pointer display the arrival time (in minutes) of the next train, allowing users to quickly assess the waiting time.
+**Development Tools and Frameworks**
+The firmware is developed in C++ using the *Arduino Integrated Development Environment (IDE)*, a robust platform with extensive libraries and community support. It utilizes Arduino core libraries for hardware abstraction and peripheral management, simplifying interactions with sensors and actuators. For MQTT communication, the `PubSubClient` library is employed to facilitate efficient message handling and seamless data exchange with the digital twin system.
+
 
 ### Digital Twin
 **Real-Time Station Information**: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.
