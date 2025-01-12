@@ -1,0 +1,117 @@
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1a1a1a, #4b0082); /* 黑紫背景渐变 */
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .title h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(to right, #ff00ff, #4b0082, #1a1a1a); /* 荧光亮紫到黑紫渐变 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+        .text-description h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff00ff; /* 标题亮紫色 */
+            margin-bottom: 10px;
+        }
+        .text-description p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-indent: 20px; /* 首行缩进 */
+        }
+        .media img, .media video {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .footer-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff00ff, #4b0082, #1a1a1a); /* 底部渐变 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .group-name, .github-link {
+            margin: 10px 0;
+        }
+        .github-link a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .github-link a:hover {
+            color: #ff00ff; /* 悬停亮紫 */
+            text-shadow: 0 0 8px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="title">
+            <h1>Subway Data Device</h1>
+        </div>
+        <div class="content">
+            <div class="text-description">
+                <h3>Data Device (Physical Device)</h3>
+                <p>Color-Coded Indicators and Pointer: The device visually represents the service status of different lines (ranging from "Bad Service" to "Good Service") using a color-coded system and a swinging pointer.</p>
+                <p>Knob and Button Interaction: Users can rotate the knob to select specific line information and press the button to switch the train direction between Westbound and Eastbound.</p>
+                <p>LED Display: LED lights on the pointer display the arrival time (in minutes) of the next train, allowing users to quickly assess the waiting time.</p>
+
+                <h3>Data Device (Digital Device)</h3>
+                <p>Real-Time Station Information: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.</p>
+                <p>Arrival Time: The device screen updates the arrival time of the next train at the nearest station to ensure timely information.</p>
+                <p>Service Quality: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.</p>
+
+                <h3>Usage (HOW TO)</h3>
+                <p>Launch the App: Open the app and point it at the screen of the data device. Augmented Reality (AR) information will be overlaid on the data device.</p>
+                <p>Click the Button: …</p>
+                <p>Select a Line: …</p>
+            </div>
+            <div class="media">
+                <img src="https://github.com/rorschachwilpeng/casa0019/blob/main/image/image.jpg?raw=true" alt="Image">
+                <video src="https://github.com/rorschachwilpeng/casa0019/blob/main/web/video-non-compressed.mp4?raw=true" controls></video>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-title">
+                <h2>CE 2024 - 2025</h2>
+            </div>
+            <div class="group-name">
+                <p>Group 4</p>
+            </div>
+            <div class="github-link">
+                <a target="_blank" href="https://github.com/rorschachwilpeng/casa0019">https://github.com/rorschachwilpeng/casa0019</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,163 @@
+using UnityEngine;
+using UnityEngine.Networking;
+using TMPro; // use it to support TextMeshPro
+using System.Collections;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Linq;
+
+public class APIRequest1 : MonoBehaviour
+{
+    // API URL
+    private string apiUrl = "https://api.tfl.gov.uk/StopPoint/%/Arrivals/";
+
+    // List of stopPointIds
+    private List<string> stopPointIds = new List<string> { "940GZZLUSTD", "940GZZDLSTD", "910GSTFD" };
+
+    // File path to save the output
+    private string logFilePath;
+
+    // UI Text elements for displaying data
+    public TMP_Text[] lineTexts;    // Array of Texts for LineName-Direction
+    public TMP_Text[] arrivalTexts; // Array of Texts for Minutes to Arrival
+
+    void Start()
+    {
+        // Define file path to save logs
+        logFilePath = Path.Combine(Application.persistentDataPath, "TrainArrivalsLog.txt");
+
+        // Write a header to the log file
+        File.WriteAllText(logFilePath, "Train Arrival Logs\n\n");
+
+        // Start fetching data every 30 seconds
+        InvokeRepeating("FetchData", 0f, 30f);
+    }
+
+    void FetchData()
+    {
+        foreach (string stopPointId in stopPointIds)
+        {
+            string url = apiUrl.Replace("%", stopPointId);
+
+            // Start the Coroutine to fetch data for each stopPointId
+            StartCoroutine(GetAPIData(url, stopPointId));
+        }
+    }
+
+    IEnumerator GetAPIData(string url, string stopPointId)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url);
+
+        // Send the request and wait for a response
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            string jsonResponse = request.downloadHandler.text;
+            ProcessData(jsonResponse, stopPointId);
+        }
+        else
+        {
+            string errorLog = $"API request failed for stopPointId {stopPointId}: {request.error}\n";
+            Debug.LogError(errorLog);
+
+            // Log the error to the file
+            File.AppendAllText(logFilePath, errorLog);
+        }
+    }
+
+    void ProcessData(string jsonResponse, string stopPointId)
+    {
+        try
+        {
+            // Parse JSON
+            JArray predictions = JArray.Parse(jsonResponse);
+
+            // Separate inbound and outbound predictions
+            List<JObject> inboundPredictions = new List<JObject>();
+            List<JObject> outboundPredictions = new List<JObject>();
+
+            foreach (var prediction in predictions)
+            {
+                string direction = prediction["direction"]?.ToString();
+                if (direction == "inbound")
+                {
+                    inboundPredictions.Add((JObject)prediction);
+                }
+                else if (direction == "outbound")
+                {
+                    outboundPredictions.Add((JObject)prediction);
+                }
+            }
+
+            // Sort by expectedArrival
+            inboundPredictions.Sort((a, b) => a["expectedArrival"].ToString().CompareTo(b["expectedArrival"].ToString()));
+            outboundPredictions.Sort((a, b) => a["expectedArrival"].ToString().CompareTo(b["expectedArrival"].ToString()));
+
+            // Get the two nearest trains for each direction
+            List<JObject> nearestInbound = inboundPredictions.Take(2).ToList();
+            List<JObject> nearestOutbound = outboundPredictions.Take(2).ToList();
+
+            // Update the UI Texts
+            UpdateUIText(stopPointId, nearestInbound, nearestOutbound);
+        }
+        catch (Exception ex)
+        {
+            string errorLog = $"Error processing data for StopPointId {stopPointId}: {ex.Message}\n";
+            Debug.LogError(errorLog);
+
+            // Log the error to the file
+            File.AppendAllText(logFilePath, errorLog);
+        }
+    }
+
+    void UpdateUIText(string stopPointId, List<JObject> inbound, List<JObject> outbound)
+    {
+        // Determine the index for this stopPointId
+        int index = stopPointIds.IndexOf(stopPointId);
+        if (index == -1 || index * 4 + 3 >= lineTexts.Length)
+            return;
+
+        // Update Inbound Text (2 trains)
+        for (int i = 0; i < 2; i++)
+        {
+            if (i < inbound.Count)
+            {
+                string lineName = inbound[i]["lineName"]?.ToString() ?? "Unknown";
+                DateTime arrivalTime = DateTime.Parse(inbound[i]["expectedArrival"]?.ToString() ?? DateTime.UtcNow.ToString());
+                TimeSpan timeToArrival = arrivalTime - DateTime.UtcNow;
+                int minutesToArrival = Mathf.Max(0, (int)timeToArrival.TotalMinutes);
+
+                lineTexts[index * 4 + i].text = $"{lineName}-Inbound";
+                arrivalTexts[index * 4 + i].text = $"{minutesToArrival} min";
+            }
+            else
+            {
+                lineTexts[index * 4 + i].text = "No Data-Inbound";
+                arrivalTexts[index * 4 + i].text = "--";
+            }
+        }
+
+        // Update Outbound Text (2 trains)
+        for (int i = 0; i < 2; i++)
+        {
+            if (i < outbound.Count)
+            {
+                string lineName = outbound[i]["lineName"]?.ToString() ?? "Unknown";
+                DateTime arrivalTime = DateTime.Parse(outbound[i]["expectedArrival"]?.ToString() ?? DateTime.UtcNow.ToString());
+                TimeSpan timeToArrival = arrivalTime - DateTime.UtcNow;
+                int minutesToArrival = Mathf.Max(0, (int)timeToArrival.TotalMinutes);
+
+                lineTexts[index * 4 + 2 + i].text = $"{lineName}-Outbound";
+                arrivalTexts[index * 4 + 2 + i].text = $"{minutesToArrival} min";
+            }
+            else
+            {
+                lineTexts[index * 4 + 2 + i].text = "No Data-Outbound";
+                arrivalTexts[index * 4 + 2 + i].text = "--";
+            }
+        }
+    }
+}
