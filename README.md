@@ -58,7 +58,7 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 ### User interface and experience
 
-#### Wirerframes 
+#### Wireframes 
 
 #### Front panel with final UI
 
