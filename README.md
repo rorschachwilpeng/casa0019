@@ -1,6 +1,6 @@
 # CASA0019: Sensor Data Visualisation 24/25: SubRadar
 <p align="center">
-  <img src="https://github.com/rorschachwilpeng/casa0019/blob/main/image/Cover.png" alt="NOVA" width="800">
+  <img src="https://github.com/user-attachments/assets/f221d18f-f8d2-494d-9db2-d6e380319fca" alt="NOVA" width="800">
 </p>
 
 ## Table of Contents
