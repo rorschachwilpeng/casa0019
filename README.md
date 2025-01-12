@@ -201,10 +201,10 @@ The dashboard in Android application is shown in figures below, it includes four
 <table>
   <tr>
     <td align="center">
-      <img src="image/digital_dashboard1.jpg" alt="Digital Dashboard 1" width="250">
+      <img src="image/digital_dashboard1.jpg" alt="Digital Dashboard 1" width="280">
     </td>
     <td align="center">
-      <img src="image/digital_dashboard2.jpg" alt="Digital Dashboard 2" width="250">
+      <img src="image/digital_dashboard2.jpg" alt="Digital Dashboard 2" width="280">
     </td>
   </tr>
 </table>
