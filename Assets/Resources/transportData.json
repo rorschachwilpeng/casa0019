@@ -1,0 +1,21 @@
+{
+    "central_inbound_timeToStation": 205,
+    "central_inbound_direction": "inbound",
+    "central_inbound_service_level": 0.2,
+    "central_outbound_timeToStation": 116,
+    "central_outbound_direction": "outbound",
+    "central_outbound_service_level": 0.3,
+    "dlr_inbound_timeToStation": 945,
+    "dlr_inbound_direction": "inbound",
+    "dlr_inbound_service_level": 0.11,
+    "dlr_outbound_timeToStation": 227,
+    "dlr_outbound_direction": "outbound",
+    "dlr_outbound_service_level": 0.17,
+    "elizabeth_inbound_timeToStation": 1653,
+    "elizabeth_inbound_direction": "inbound",
+    "elizabeth_inbound_service_level": 0.0,
+    "elizabeth_outbound_service_level": 0.7,
+    "jubilee_inbound_timeToStation": 203,
+    "jubilee_inbound_direction": "inbound",
+    "jubilee_inbound_service_level": 0.21
+}
