@@ -1,33 +1,45 @@
 # CASA0019: Sensor Data Visualisation 24/25: SubRadar
 <p align="center">
-  <img src="image/page_info.png" alt="NOVA" width="800">
+  <img src="https://github.com/rorschachwilpeng/casa0019/blob/main/image/Cover.png" alt="NOVA" width="800">
 </p>
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Enclosure & Industrial Design](#enclosure-&-industrial-design)
+2. [Enclosure and Industrial Design](#enclosure-and-industrial-design)
 3. [Data](#data)
-4. [Device Engineering (Physical & Digital)](#device-engineering)
-5. [Challenges & Limitations](#challenges-and-limitations)
+4. [Data Device](#data-device)
+5. [Challenges & Future Development](#challenges-and-future-development)
 6. [How to use](#how-to-use)
 7. [References](#references)
 
 ## Project Overview
-The **SubRadar** project is a sensor-based system that visualizes real-time transportation data for Stratford Underground Station. Combining physical and digital elements, it provides train arrival times, service quality, and directional updates to people working and studying at UCL East. Users interact with the device through a rotary knob, button, and LED indicators.
+**SubRadar** is an interactive device that visualizes real-time transportation data for Stratford Underground Station. 
 
 ### Rationale
-Oftentimes, when using applications such as Citymapper or Google Maps, it can take some time to plot in a route or check the latest train times. This project therefore aimed to distill this information into a physical dial device, with digital elements, such that students and staff preparing to leave UCL East after class or work would be able to, at a glance, get all the latest information on the nearest underground trains with minimal effort. It was hoped that through a unique radar-inspired dial, this information could be presented to the UCL East audience in a novel and engaging way.
+SubRadar aims to visualise underground train arrival times and service information into a physical dial device, with digital elements, for students and staff preparing to leave UCL East after class or work. It was hoped that through a unique radar-inspired dial, this information could be presented to the UCL East audience in an accessible and engaging way.
 
-## Enclosure & Industrial Design
+## UI Design Principles and Achievements
+### Design principles - Principles of design
+The basic goals of our user interface design we promote are clearness and ease of understanding. In order to place essential information right under the user's fingertips, we followeds a layered information display structure: The outer semicircular cone pictures the quality at subways along with the movement of the pointer that clearly reflects the exact status of the trains in the real-time. The outer circle of the track uses lights that will light up the numbers of the minutes that go by, thus making it easy for the passengers to know when the next train will arrive. The over-arching design is based upon the wholesale reduction of cognitive load for the user by making information simple and straightforward. Furthermore, the real-world feedback loop provided by the actual physical pointer magnifies the collectedness of the interaction experience.
+
+<img src="https://github.com/rorschachwilpeng/casa0019/tree/main/image" width="500"/>
+
+### Achievements
+The UI interface successfully achieves clear information segmentation through a dual-layer dial design, enabling users to quickly access both service quality and arrival time information.
+The light-marking feature effectively visualizes time data and received positive feedback from instructors during the demonstration.
+The UI interface is fully integrated with the hardware functionality, supporting users in selecting subway line directions and specific line information through the button and sliding potentiometer.
+This design successfully combines service quality and time data, meeting users’ needs for quick and efficient commuting decisions.
+
+## Enclosure and Industrial Design
 
 ### Inspiration
-SubRadar draws largely on sources such as classic science fiction. This is because we wanted the appearance of the dial to emulate a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to emulate this familiar, classic device that also aimed to show the proximity of moving vehicles to a fixed station. 
+SubRadar emulates a vaccum-tube type device in order to make reference to the classic green or red circular radar scopes of the past. The homage to historical radar is intentional; we wanted to reference a typology of device designed to show the proximity of moving vehicles to a fixed station. 
 
 <img src="https://github.com/user-attachments/assets/ef6f6452-4cdf-4758-ad5c-ecab54756789" width="500"/>
 
 *An oscilloscope, a type of device that traditionally used a vaccum-tube display (Wikipedia, 2025)*
 
-However, without a vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. In particular, we took inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation. In an interview with Adam Savage (formerly of Mythbusters), he described how he used lights placed behind dark coloured acrylic to create the impression of a touch-screen display (Savage, 2024). We used a similar approach, with LEDs placed behind frosted acrylic to create the grainy effect of a vaccum-tube display.
+However, without an actual vaccuum-tube display available to us, we had to simulate the effect using stage special effect techniques. Taking inspiration from Michael Okuda, the graphic designer for Star Trek: The Next Generation, (Savage, 2024) we decided to place LEDs mounted on a servo pointer behind frosted acrylic to evoke the grainy effect of a vaccum-tube display.
 
 <img src="https://github.com/user-attachments/assets/3dcef05e-29e9-4e5e-bdc9-9f509e932c13" width="500"/>
 
@@ -59,11 +71,11 @@ The physical design was developed in Fusion360 and printed on a Bambu Lab 3D pri
 
 *The major device components coming together, showing the difference made by adding the UV printed graphics*
 
-The final UI was adapted from the wireframe designs to fit the dimensions of the pysical enclosure as built. These were then prepared for UV printing using GIMP and printed on a laser-cut piece of black acrylic. The graphics were printed using a technique very similar to screen printing, with 2 layers of white laid down before the final colour print, in an attempt to ensure the print had sufficient opacity. A piece of frosted red acrylic was chosen instead of the intital transparent purple colour in the original wireframe design, as it offered nice visual effects with the backlighting, that mimicked the appearance of a vaccuum-tube display very well.
+The final UI was adapted from the wireframe designs to fit the dimensions of the pysical enclosure as built. These were then prepared for UV printing using GIMP and printed on a laser-cut piece of black acrylic. The graphics were printed with 2 layers of white laid down before the final colour print, in an attempt to ensure the print had sufficient opacity. 
 
 ## Data
 ### Data Source
-The project utilizes the [Transport for London (TfL) Unified API](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals) to access real-time data on public transportation. This API provides comprehensive information across various transport modes, including live arrivals, line statuses, and station details. By integrating this API, the project ensures accurate and up-to-date data, enhancing the reliability and 
+The project utilizes the [Transport for London (TfL) Unified API](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/Line/Line_Arrivals) to access real-time data on public transportation. This API provides comprehensive information across various transport modes, including live arrivals, line statuses, and station details. By integrating this API, the project ensures that accurate and up-to-date data is sent to the device for users to consume.
 
 *Used Data:*
 | **Field Name**       | **Meaning**                                | **Purpose**                                                                                         |
@@ -209,10 +221,10 @@ The dashboard in Android application is shown in figures below, it includes four
   </tr>
 </table>
 
-## Challenges & Limitations
+## Challenges and Future Development
 
 ### Enclosure and product design
-Designing and building the enclosure was filled with many challenges, primarily due to the ambitiously curved nature of the rear shell. It took multiple tries to successfully print the component, and the precision of the Bambu Lab printer was largely the reason why the final print succeeded. For the UV printing of the front face with the UI, this turned out to be mostly successful on the first try, but the component still suffered from some of the print being off registration and the black acrylic, though it worked well to prevent light leaking from inside the device, also made it difficult to achieve good print opacity due to the dark base colour, even with 2 white underlayers. If we were to update the device design, with more time, it would be useful to do a few more test prints to ensure the registration is correct. Furthermore, to solve the opacity problem, a lighter colour of acrylic could be used, and black paint applied to the interior face to reduce light leakage.
+For the UV printing of the front face with the UI, print opcacity was a persistent problem due to the dark coloured acrylic. If we were to develop another iteration of the device, lighter coloured acrylic could be used, and black paint applied to the interior face to reduce light leakage.
 
 ### Digital dashboard
 Although a 3D model was constructed using Unity software during the setup of the digital dashboard, in order to ensure that users can intuitively view specific train line information, this project ultimately adopted a 2D presentation effect. Future research could focus on how to present components in a 3D effect while ensuring the practicality of the functions, to enhance the user's interactive experience.
@@ -227,8 +239,6 @@ https://github.com/user-attachments/assets/52968817-6eab-4319-b941-27107830a150
 *Video demo of the physical device*
 
 https://github.com/user-attachments/assets/e4ada6dc-514a-41d3-86cf-59e24c7f435a
-
-*Video demo of the digital twin application*
 
 ## References
 
