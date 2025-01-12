@@ -176,10 +176,13 @@ MQTT is used to transmit processed data from the Pi Cloud to the physical device
 
 The firmware is developed in C++ using the *Arduino Integrated Development Environment (IDE)*, a robust platform with extensive libraries and community support. It utilizes Arduino core libraries for hardware abstraction and peripheral management, simplifying interactions with sensors and actuators. For MQTT communication, the `PubSubClient` library is employed to facilitate efficient message handling and seamless data exchange with the digital twin system.
 
+<p align="center">
+  <img src="image/digital_dashboard1.jpg" alt="NOVA" width="500">
+</p>
 
 ### Digital Dashboard
 
-**The dashboard in Android application is shown in figure1 and figure2 below, the following paragraph will describe dashboard interface based on each component:
+The dashboard in Android application is shown in figures below, it includes four main components:
 
 
 - Overview Panel
@@ -196,7 +199,8 @@ The firmware is developed in C++ using the *Arduino Integrated Development Envir
 
 - Line Selection Buttons
 
-    Each button means a specific direction of a train line. For instance, Figure 1 shows information for the Central line with inbound direction. Users can interact by clicking the buttons, and when a button is pressed, the three components above will switch to display the related information. The eight buttons are arranged in a table-like layout, making it convenient for users to understand the difference of each button.
+    Each button means a specific direction of a train line. For instance, the following figures display the information for the Central line with inbound direction and the Elizabeth line with outbond direction. Users can interact by clicking the buttons, and when a button is pressed, the three components above will switch to display the related information. The eight buttons are arranged in a table-like layout, making it convenient for users to understand the difference of each button.
+
 
 
 ## Challenges & Limitations
