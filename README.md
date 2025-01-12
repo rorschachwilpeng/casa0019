@@ -217,12 +217,18 @@ Designing and building the enclosure was filled with many challenges, primarily 
 ### Digital dashboard
 Although a 3D model was constructed using Unity software during the setup of the digital dashboard, in order to ensure that users can intuitively view specific train line information, this project ultimately adopted a 2D presentation effect. Future research could focus on how to present components in a 3D effect while ensuring the practicality of the functions, to enhance the user's interactive experience.
 
-
 ## HOW TO USE
+### Installation
 Download unity project and export into android phone(note: the whole unity project package can be download from: [Unity download](https://drive.google.com/drive/folders/1l0MogaIiQY0JzLcIodSMHOmLL0bt4O5d))
 
-**[User Handle Video](https://drive.google.com/drive/folders/1M11wbQeFNqyHgFkjwhyMpW0GjjbA-uOk)**
+### Demo
+https://github.com/user-attachments/assets/52968817-6eab-4319-b941-27107830a150
 
+*Video demo of the physical device*
+
+https://github.com/user-attachments/assets/e4ada6dc-514a-41d3-86cf-59e24c7f435a
+
+*Video demo of the digital twin application*
 
 ## References
 
