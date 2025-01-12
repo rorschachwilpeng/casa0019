@@ -240,6 +240,8 @@ https://github.com/user-attachments/assets/52968817-6eab-4319-b941-27107830a150
 
 https://github.com/user-attachments/assets/e4ada6dc-514a-41d3-86cf-59e24c7f435a
 
+*Video demo of the digital twin Unity mobile application*
+
 ## References
 
 Nguyen, W. (2015). *An Ode to the Okudagram.* [online] TREKNEWS.NET. Available at: https://treknews.net/2015/07/23/ode-to-okudagram/ [Accessed 11 Jan. 2025].
