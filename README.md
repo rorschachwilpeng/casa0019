@@ -177,12 +177,27 @@ MQTT is used to transmit processed data from the Pi Cloud to the physical device
 The firmware is developed in C++ using the *Arduino Integrated Development Environment (IDE)*, a robust platform with extensive libraries and community support. It utilizes Arduino core libraries for hardware abstraction and peripheral management, simplifying interactions with sensors and actuators. For MQTT communication, the `PubSubClient` library is employed to facilitate efficient message handling and seamless data exchange with the digital twin system.
 
 
-### Digital Twin
-**Real-Time Station Information**: A digital screen displays detailed station names for the user-selected line, along with real-time updates on service quality.
+### Digital Dashboard
 
-**Arrival Time**: The device screen updates the arrival time of the next train at the nearest station to ensure timely information.
+**The dashboard in Android application is shown in figure1 and figure2 below, the following paragraph will describe dashboard interface based on each component:
 
-**Service Quality**: The overall service quality of the selected line is visually represented as a percentage, giving users a clear understanding of the line’s operational status.
+
+- Overview Panel
+
+    This panel includes the train name, line direction, real-time service value, and expected arrival time. The function is to present important data in a direct and prominent way, allowing users to capture key information as soon as they open the app.
+
+- Map of Each Train Line
+
+    This map indicates all of the stations in the current train line, it can help users to navigate towards their destinations.
+
+- Digital Twin of Physical Gauge
+
+    The interface of this gauge is same with physical gauge, the pointer can smoothly transitions to the corresponding angle based on the “quality of service” value, the specific animation effect achieved through Mathf.Lerp. In addition, there are five lights on the pointer, and they will show a "light up" effect based on the train's expected arrival time. This effect is achieved by ShowObjectBasedOnRange method, which makes objects appear or disappear according to time value.
+
+- Line Selection Buttons
+
+    Each button means a specific direction of a train line. For instance, Figure 1 shows information for the Central line with inbound direction. Users can interact by clicking the buttons, and when a button is pressed, the three components above will switch to display the related information. The eight buttons are arranged in a table-like layout, making it convenient for users to understand the difference of each button.
+
 
 ## Challenges & Limitations
 
