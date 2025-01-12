@@ -219,7 +219,7 @@ Although a 3D model was constructed using Unity software during the setup of the
 
 
 ## HOW TO USE
-Download unity project and export into android smartphone.(note: the whole unity project package can be download form: [Unity packagedownload](https://drive.google.com/drive/folders/1l0MogaIiQY0JzLcIodSMHOmLL0bt4O5d))
+Download unity project and export into android smartphone.(note: the whole unity project package can be download form: [Unity package download](https://drive.google.com/drive/folders/1l0MogaIiQY0JzLcIodSMHOmLL0bt4O5d))
 
 **[User Handle Video](https://drive.google.com/drive/folders/1uhCp3n9zvYmw-k7yBAYddTRGSpbOPPon?usp=drive_link)**
 
