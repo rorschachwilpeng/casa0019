@@ -22,7 +22,7 @@ SubRadar aims to visualise underground train arrival times and service informati
 ### Design principles - Principles of design
 The basic goals of our user interface design we promote are clearness and ease of understanding. In order to place essential information right under the user's fingertips, we followeds a layered information display structure: The outer semicircular cone pictures the quality at subways along with the movement of the pointer that clearly reflects the exact status of the trains in the real-time. The outer circle of the track uses lights that will light up the numbers of the minutes that go by, thus making it easy for the passengers to know when the next train will arrive. The over-arching design is based upon the wholesale reduction of cognitive load for the user by making information simple and straightforward. Furthermore, the real-world feedback loop provided by the actual physical pointer magnifies the collectedness of the interaction experience.
 
-<img src="https://github.com/rorschachwilpeng/casa0019/tree/main/image" width="500"/>
+<img src="https://github.com/user-attachments/assets/8e6fb692-f382-4184-858e-ade7fe982b63" width="500"/>
 
 ### Achievements
 The UI interface successfully achieves clear information segmentation through a dual-layer dial design, enabling users to quickly access both service quality and arrival time information.
@@ -224,10 +224,18 @@ The dashboard in Android application is shown in figures below, it includes four
 ## Challenges and Future Development
 
 ### Enclosure and product design
+The enclosure provided significant challenges to print, and several attempts resulted in delamination. In the end, the final print was successful in no small part due to the precision of the Bambu printer as opposed to the Prusa Mk 4. In future developments, it would be good to test breaking down or reorienting the rear shell 3D model to see if it would be easier to print in such as configuration.
+
 For the UV printing of the front face with the UI, print opcacity was a persistent problem due to the dark coloured acrylic. If we were to develop another iteration of the device, lighter coloured acrylic could be used, and black paint applied to the interior face to reduce light leakage.
 
 ### Digital dashboard
 Although a 3D model was constructed using Unity software during the setup of the digital dashboard, in order to ensure that users can intuitively view specific train line information, this project ultimately adopted a 2D presentation effect. Future research could focus on how to present components in a 3D effect while ensuring the practicality of the functions, to enhance the user's interactive experience.
+
+### Data Challenges and Solutions
+Managing data synchronization with the TFL API was challenging due to connectivity interruptions, causing delays in real-time updates. This was resolved by adding a retry mechanism in Python scripts. Inconsistent and incomplete data required cleaning and standardization to ensure usability. Future improvements will focus on implementing caching and optimizing data handling for better reliability and performance.
+
+### Physical Device Challenges and Solutions
+Hardware reliability was an issue, with a faulty rotary encoder and unstable MKR 1010 board. Replacing these with a new encoder and ESP8266 resolved the problems. MQTT connectivity issues were addressed by using a non-blocking code structure. Future plans include refining the circuit design and exploring alternative communication protocols for improved scalability.
 
 ## HOW TO USE
 ### Installation
