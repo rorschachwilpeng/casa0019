@@ -199,11 +199,19 @@ The dashboard in Android application is shown in figures below, it includes four
     Each button means a specific direction of a train line. For instance, the following figures display the information for the Central line with inbound direction and the Elizabeth line with outbond direction. Users can interact by clicking the buttons, and when a button is pressed, the three components above will switch to display the related information. The eight buttons are arranged in a table-like layout, making it convenient for users to understand the difference of each button.
 
 <p align="center">
-  <img src="image/digital_dashboard2.jpg" alt="NOVA" width="500">
+  <img src="image/digital_dashboard2.jpg" alt="NOVA" width="300">
 </p>
 
-
-
+<table>
+  <tr>
+    <td align="center">
+      <img src="image/digital_dashboard1.jpg" alt="Digital Dashboard 1" width="200">
+    </td>
+    <td align="center">
+      <img src="image/digital_dashboard2.jpg" alt="Digital Dashboard 2" width="200">
+    </td>
+  </tr>
+</table>
 
 ## Challenges & Limitations
 
