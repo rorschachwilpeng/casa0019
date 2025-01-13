@@ -3,6 +3,8 @@
   <img src="https://github.com/user-attachments/assets/f221d18f-f8d2-494d-9db2-d6e380319fca" alt="NOVA" width="800">
 </p>
 
+GitHub Repository: https://github.com/rorschachwilpeng/casa0019/
+
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Enclosure and Industrial Design](#enclosure-and-industrial-design)
