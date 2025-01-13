@@ -22,7 +22,7 @@ SubRadar aims to visualise underground train arrival times and service informati
 ### Design principles - Principles of design
 The basic goals of our user interface design we promote are clearness and ease of understanding. In order to place essential information right under the user's fingertips, we followeds a layered information display structure: The outer semicircular cone pictures the quality at subways along with the movement of the pointer that clearly reflects the exact status of the trains in the real-time. The outer circle of the track uses lights that will light up the numbers of the minutes that go by, thus making it easy for the passengers to know when the next train will arrive. The over-arching design is based upon the wholesale reduction of cognitive load for the user by making information simple and straightforward. Furthermore, the real-world feedback loop provided by the actual physical pointer magnifies the collectedness of the interaction experience.
 
-<img src="https://github.com/user-attachments/assets/8e6fb692-f382-4184-858e-ade7fe982b63" width="500"/>
+<img src="https://github.com/user-attachments/assets/bdf02fce-2218-47b8-a8a9-cd53b6d88a9f" width="500"/>
 
 ### Achievements
 The UI interface successfully achieves clear information segmentation through a dual-layer dial design, enabling users to quickly access both service quality and arrival time information.
